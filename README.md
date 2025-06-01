@@ -20,9 +20,9 @@
 
 | 이름 | 언어 | 블로그 / GitHub |
 |------|------|------------------|
-| @ByeongbumSeo | Java | [링크](https://github.com/ByeongbumSeo) |
-| @dhjin1125 | Kotlin | [링크](https://github.com/dhjin1125) |
-| @Glsme | Swift | [링크](https://github.com/Glsme) |
+| [bum](https://github.com/ByeongbumSeo) | Java | [블로그](https://byeongbumseo.github.io/) |
+| [jin](https://github.com/dhjin1125) | Kotlin | [GitHub](https://github.com/dhjin1125) |
+| [hano](https://github.com/Glsme) | Swift | [GitHub](https://github.com/Glsme) |
 
 > 개인별 자세한 소개는 [`members/`](./members/) 디렉토리에서 확인 가능합니다.
 

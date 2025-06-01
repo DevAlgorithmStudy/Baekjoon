@@ -10,11 +10,11 @@
 
 ## 📚 해결한 문제들
 
-| 문제명 | 번호 | 난이도 | 주차 | 멤버1 | 멤버2 | 멤버3 | 메모 |
-|--------|------|--------|------|--------|--------|--------|------|
-| [동전 1](https://www.acmicpc.net/problem/2293) | 2293 | Gold V | 3 | [링크](#) | - | - | 기본적인 DP 문제 |
-| [계단 오르기](https://www.acmicpc.net/problem/2579) | 2579 | Silver III | 5 | - | [링크](#) | - | 조건부 DP |
-| [정수 삼각형](https://www.acmicpc.net/problem/1932) | 1932 | Silver I | 8 | - | - | [링크](#) | 2차원 DP |
+| 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |
+|--------|------|--------|------|--------|--------|--------|
+| [N과 M (1)](https://www.acmicpc.net/problem/15649) | 15649 | Silver III | 1 | [링크](#) | - | - |
+| [스도쿠](https://www.acmicpc.net/problem/2239) | 2239 | Gold IV | 7 | - | [링크](#) | - |
+| [암호 만들기](https://www.acmicpc.net/problem/1759) | 1759 | Gold V | 9 | - | - | [링크](#) |
 
 
 ## 📝 학습 노트
