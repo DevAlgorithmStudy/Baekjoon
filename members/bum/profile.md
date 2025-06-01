@@ -1,11 +1,11 @@
-# 멤버 프로필 – @YOUR_ID
+# 멤버 프로필
 <!-- 이름·블로그·GitHub 등 개인 정보는 자유롭게 추가/수정 -->
 
 ## 👤 기본 정보
-- **이름**: 홍길동
-- **주 사용 언어**: Kotlin
-- **개인 GitHub**: [hong98](https://github.com/hong98)
-- **개인 블로그**: [Tech Log](https://hong98.dev)
+- **이름**: 서병범
+- **주 사용 언어**: Java
+- **개인 GitHub**: [ByeongbumSeo - Github](https://github.com/ByeongbumSeo)
+- **개인 블로그**: [범범의 연습장 Blog](https://byeongbumseo.github.io/)
 
 ---
 

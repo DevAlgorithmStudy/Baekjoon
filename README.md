@@ -20,9 +20,9 @@
 
 | 이름 | 언어 | 블로그 / GitHub |
 |------|------|------------------|
-| 멤버1 | Java | [링크](https://github.com/member1) |
-| 멤버2 | Kotlin | [링크](https://blog.member2.com) |
-| 멤버3 | Swift | [링크](https://github.com/member3) |
+| @ByeongbumSeo | Java | [링크](https://github.com/ByeongbumSeo) |
+| @dhjin1125 | Kotlin | [링크](https://github.com/dhjin1125) |
+| @Glsme | Swift | [링크](https://github.com/Glsme) |
 
 > 개인별 자세한 소개는 [`members/`](./members/) 디렉토리에서 확인 가능합니다.
 
@@ -54,6 +54,8 @@ Baekjoon/
 │       ├── bfs-dfs.md
 │       ├── backtracking.md
 │       └── …
+├── template/
+│   └── weekly-template.md     # 주차별 개인 학습 기록 마크다운 템플릿
 ```
 
 ---
