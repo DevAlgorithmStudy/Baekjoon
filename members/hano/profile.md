@@ -18,11 +18,3 @@
 | 1 | [DFS와 BFS](https://www.acmicpc.net/problem/1260) | 1260 | Silver II | 그래프 | [풀이](https://hong98.dev/boj-1260) |  |
 | 1 | [동전 1](https://www.acmicpc.net/problem/2293) | 2293 | Gold V | DP | [풀이](https://hong98.dev/boj-2293) | 내가 선정 |
 | 2 | [최단경로](https://www.acmicpc.net/problem/1753) | 1753 | Gold IV | 그래프 | [풀이](https://hong98.dev/boj-1753) | 다익스트라 |
-
----
-
-## 📊 통계 <!-- 자동 생성 영역, 손으로 수정 ❌ -->
-<!-- ACTIONS-STATS:START -->
-
-
-<!-- ACTIONS-STATS:END -->
