@@ -13,6 +13,7 @@
 
 | 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |
 |--------|------|--------|------|-----|------|-----|
+| [평균](https://www.acmicpc.net/problem/1546) | 1546 | Bronze V | 1 | [풀이](https://github.com/B/1546) | [풀이](https://github.com/B/1546) | [풀이](https://github.com/B/1546) |
 | [N-Queen](https://www.acmicpc.net/problem/9663) | 9663 | Gold I | 3 | [풀이](https://github.com/F/9663) | [풀이](https://github.com/F/9663) | [풀이](https://github.com/F/9663) |
 
 ## 📝 학습 노트

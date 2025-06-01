@@ -10,8 +10,11 @@
 
 ## 📚 해결한 문제들
 
-
 | 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |
+|--------|------|--------|------|-----|------|-----|
+| [멀티탭 스케줄링](https://www.acmicpc.net/problem/1700) | 1700 | Silver II | 2 | [풀이](https://github.com/D/1700) | [풀이](https://github.com/D/1700) | [풀이](https://github.com/D/1700) |
+| [감소하는 수](https://www.acmicpc.net/problem/1038) | 1038 | Silver V | 5 | [풀이](https://github.com/I/1038) | [풀이](https://github.com/I/1038) | [풀이](https://github.com/I/1038) |
+| [나무 자르기](https://www.acmicpc.net/problem/2805) | 2805 | Gold III | 5 | [풀이](https://github.com/J/2805) | [풀이](https://github.com/J/2805) | [풀이](https://github.com/J/2805) |
 
 ## 📝 학습 노트
 ### 주요 패턴

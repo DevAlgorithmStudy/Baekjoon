@@ -14,6 +14,7 @@ BFS와 DFS는 그래프 탐색 기법으로, 각각 큐와 스택을 기반으�
 | 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |
 |--------|------|--------|------|-----|------|-----|
 | [숨바꼭질](https://www.acmicpc.net/problem/1697) | 1697 | Silver I | 2 | [풀이](https://github.com/C/1697) | [풀이](https://github.com/C/1697) | [풀이](https://github.com/C/1697) |
+| [줄세우기](https://www.acmicpc.net/problem/2252) | 2252 | Gold II | 4 | [풀이](https://github.com/G/2252) | [풀이](https://github.com/G/2252) | [풀이](https://github.com/G/2252) |
 
 ## 📝 학습 노트
 ### 주요 패턴
