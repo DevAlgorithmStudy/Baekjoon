@@ -13,6 +13,7 @@
 
 | 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |
 |--------|------|--------|------|-----|------|-----|
+| [N-Queen](https://www.acmicpc.net/problem/9663) | 9663 | Gold I | 3 | [풀이](https://github.com/F/9663) | [풀이](https://github.com/F/9663) | [풀이](https://github.com/F/9663) |
 
 ## 📝 학습 노트
 ### 주요 패턴

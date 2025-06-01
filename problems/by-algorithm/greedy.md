@@ -10,10 +10,8 @@
 
 ## 📚 해결한 문제들
 
+
 | 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |
-|--------|------|--------|------|-----|------|-----|
-| [[예시 Silver (Greedy)](https://www.acmicpc.net/problem/11399)](https://www.acmicpc.net/problem/11399) | 11399 | Silver III | 4 | [풀이](https://github.com/J/11399_bum) | [풀이](https://github.com/J/11399_hano) | [풀이](https://github.com/J/11399_jin) |
-| [[문제1](...)](https://www.acmicpc.net/problem/9991) | 9991 | Silver III | 7 | [풀이](...) | [풀이](...) | [풀이](...) |
 
 ## 📝 학습 노트
 ### 주요 패턴

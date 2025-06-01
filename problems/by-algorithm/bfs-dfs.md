@@ -13,7 +13,7 @@ BFS와 DFS는 그래프 탐색 기법으로, 각각 큐와 스택을 기반으�
 
 | 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |
 |--------|------|--------|------|-----|------|-----|
-| [[예시 Gold (DFS)](https://www.acmicpc.net/problem/11725)](https://www.acmicpc.net/problem/11725) | 11725 | Gold II | 2 | [풀이](https://github.com/F/11725_bum) | [풀이](https://github.com/F/11725_hano) | [풀이](https://github.com/F/11725_jin) |
+| [숨바꼭질](https://www.acmicpc.net/problem/1697) | 1697 | Silver I | 2 | [풀이](https://github.com/C/1697) | [풀이](https://github.com/C/1697) | [풀이](https://github.com/C/1697) |
 
 ## 📝 학습 노트
 ### 주요 패턴
