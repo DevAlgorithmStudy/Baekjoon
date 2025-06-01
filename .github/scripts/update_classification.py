@@ -3,6 +3,7 @@
 
 import re
 from pathlib import Path
+from collections import defaultdict
 
 # 1) 경로 설정 (레포지토리 루트로 이동)
 ROOT = Path(__file__).parent.parent.parent
@@ -82,6 +83,15 @@ def parse_solved_entries():
     return entries
 
 
+def extract_plain_name(markdown_link: str) -> str:
+    """
+    "[문제명](url)" 형태의 문자열에서 '문제명'만 추출.
+    markdown_link가 순수 텍스트라면 그대로 반환.
+    """
+    match = re.match(r"\[(.*?)\]", markdown_link)
+    return match.group(1) if match else markdown_link
+
+
 # 4) by-tier 파일 내 '## 📚 해결한 문제들' 구간 갱신
 def update_tier_file(tier_name, entries):
     """
@@ -118,7 +128,8 @@ def update_tier_file(tier_name, entries):
     new_table.append("| 문제명 | 번호 | 주차 | bum | hano | jin | 알고리즘 |")
     new_table.append("|--------|------|------|-----|------|-----|------|")
     for e in filtered:
-        link = f"[{e['name']}](https://www.acmicpc.net/problem/{e['number']})"
+        name_text = extract_plain_name(e["name"])
+        link = f"[{name_text}](https://www.acmicpc.net/problem/{e['number']})"
         bum_cell = e["bum"] if e["bum"] else "-"
         hano_cell = e["hano"] if e["hano"] else "-"
         jin_cell = e["jin"] if e["jin"] else "-"
@@ -142,57 +153,95 @@ def update_tier_file(tier_name, entries):
 
 
 # 5) by-algorithm 파일 내 '## 📚 해결한 문제들' 구간 갱신
-def update_algo_file(algo_key, entries):
+def update_algo_files(entries):
     """
-    algo_key 예: 'DP', '백트래킹', '그래프' 등
-    해당 알고리즘에 속한 entries만 골라서,
-    problems/by-algorithm/{파일}.md 내 '## 📚 해결한 문제들' 섹션 테이블을 덮어쓴다.
+    모든 알고리즘 파일을 한 번에 갱신.
+    동일한 출력 파일을 가리키는 여러 알고리즘 키를 그룹화하여,
+    파일당 한 번만 테이블을 덮어쓴다.
     """
-    if algo_key not in ALGO_FILES:
-        return
+    # 5-1) 파일별 키 목록 생성 (역매핑)
+    file_to_keys = defaultdict(list)
+    for key, path in ALGO_FILES.items():
+        file_to_keys[path].append(key)
 
-    target_path = ALGO_FILES[algo_key]
-    if not target_path.exists():
-        print(f"⚠️ {algo_key} 파일이 존재하지 않아 건너뜁니다: {target_path}")
-        return
+    # 5-2) 각 파일별로 필터링된 entries 생성 후 테이블 갱신
+    for file_path, keys in file_to_keys.items():
+        if not file_path.exists():
+            print(f"⚠️ 파일이 존재하지 않아 건너뜁니다: {file_path}")
+            continue
 
-    # 해당 알고리즘에 속한 문제 필터
-    filtered = [e for e in entries if e["algo"].strip() == algo_key]
+        # 키 목록에 해당하는 알고리즘을 가진 entry만 필터링
+        filtered = [e for e in entries if e["algo"].strip() in keys]
+        if not filtered:
+            # 테이블 헤더만 유지하게 덮어쓰기
+            lines = file_path.read_text(encoding="utf-8").splitlines()
+            start_idx = next(
+                (i for i, l in enumerate(lines) if l.strip().startswith("## 📚 해결한 문제들")),
+                None
+            )
+            if start_idx is None:
+                print(f"⚠️ {file_path.name} 파일에 '## 📚 해결한 문제들' 섹션이 없어 건너뜁니다.")
+                continue
 
-    lines = target_path.read_text(encoding="utf-8").splitlines()
-    start_idx = next(
-        (i for i, l in enumerate(lines) if l.strip().startswith("## 📚 해결한 문제들")),
-        None
-    )
-    if start_idx is None:
-        print(f"⚠️ {algo_key} 파일에 '## 📚 해결한 문제들' 섹션이 없어 건너뜁니다.")
-        return
+            # 새로운 테이블: 헤더만
+            new_table = []
+            header = lines[start_idx + 1]  # 기존 헤더 행
+            divider = lines[start_idx + 2]  # 구분선
+            new_table.extend([header, divider])
 
-    new_table = []
-    new_table.append("| 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |")
-    new_table.append("|--------|------|--------|------|-----|------|-----|")
-    for e in filtered:
-        link = f"[{e['name']}](https://www.acmicpc.net/problem/{e['number']})"
-        tier_cell = e["tier"]
-        week_cell = e["week"]
-        bum_cell = e["bum"] if e["bum"] else "-"
-        hano_cell = e["hano"] if e["hano"] else "-"
-        jin_cell = e["jin"] if e["jin"] else "-"
-        row = f"| {link} | {e['number']} | {tier_cell} | {week_cell} | {bum_cell} | {hano_cell} | {jin_cell} |"
-        new_table.append(row)
+            # 기존 테이블 영역 제거
+            end_idx = start_idx + 1
+            for i in range(start_idx + 1, len(lines)):
+                if lines[i].strip().startswith("## "):
+                    break
+                end_idx += 1
 
-    end_idx = start_idx + 1
-    for i in range(start_idx + 1, len(lines)):
-        if lines[i].strip().startswith("## "):
-            break
-        end_idx += 1
+            lines_before = lines[: start_idx + 1]
+            lines_after = lines[end_idx:]
 
-    lines_before = lines[: start_idx + 1]
-    lines_after = lines[end_idx:]
+            updated = lines_before + [""] + new_table + [""] + lines_after
+            file_path.write_text("\n".join(updated), encoding="utf-8")
+            print(f"✅ {file_path.name} (키만 존재하지 않음) 테이블 헤더만 작성 완료.")
+            continue
 
-    updated = lines_before + [""] + new_table + [""] + lines_after
-    target_path.write_text("\n".join(updated), encoding="utf-8")
-    print(f"✅ {algo_key} 테이블 업데이트 완료.")
+        # 파일 내 '## 📚 해결한 문제들' 시작 인덱스 찾기
+        lines = file_path.read_text(encoding="utf-8").splitlines()
+        start_idx = next(
+            (i for i, l in enumerate(lines) if l.strip().startswith("## 📚 해결한 문제들")),
+            None
+        )
+        if start_idx is None:
+            print(f"⚠️ {file_path.name} 파일에 '## 📚 해결한 문제들' 섹션이 없어 건너뜁니다.")
+            continue
+
+        # 새로운 테이블 생성
+        new_table = []
+        new_table.append("| 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |")
+        new_table.append("|--------|------|--------|------|-----|------|-----|")
+        for e in filtered:
+            name_text = extract_plain_name(e["name"])
+            link = f"[{name_text}](https://www.acmicpc.net/problem/{e['number']})"
+            tier_cell = e["tier"]
+            week_cell = e["week"]
+            bum_cell = e["bum"] if e["bum"] else "-"
+            hano_cell = e["hano"] if e["hano"] else "-"
+            jin_cell = e["jin"] if e["jin"] else "-"
+            row = f"| {link} | {e['number']} | {tier_cell} | {week_cell} | {bum_cell} | {hano_cell} | {jin_cell} |"
+            new_table.append(row)
+
+        # 기존 테이블 영역 제거 및 삽입
+        end_idx = start_idx + 1
+        for i in range(start_idx + 1, len(lines)):
+            if lines[i].strip().startswith("## "):
+                break
+            end_idx += 1
+
+        lines_before = lines[: start_idx + 1]
+        lines_after = lines[end_idx:]
+
+        updated = lines_before + [""] + new_table + [""] + lines_after
+        file_path.write_text("\n".join(updated), encoding="utf-8")
+        print(f"✅ {file_path.name} 테이블 업데이트 완료.")
 
 
 def main():
@@ -206,8 +255,7 @@ def main():
         update_tier_file(tier_name, entries)
 
     # 2) by-algorithm 파일들 갱신
-    for algo_key in ALGO_FILES.keys():
-        update_algo_file(algo_key, entries)
+    update_algo_files(entries)
 
     print("✅ 모든 분류 파일 업데이트 완료.")
 
