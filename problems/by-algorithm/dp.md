@@ -15,6 +15,9 @@
 | [[예시 Silver (DP)](https://www.acmicpc.net/problem/11053)](https://www.acmicpc.net/problem/11053) | 11053 | Silver II | 1 | [풀이](https://github.com/B/11053_bum) | [풀이](https://github.com/B/11053_hano) | [풀이](https://github.com/B/11053_jin) |
 | [[예시 Gold (DP)](https://www.acmicpc.net/problem/2293)](https://www.acmicpc.net/problem/2293) | 2293 | Gold V | 2 | [풀이](https://github.com/E/2293_bum) | [풀이](https://github.com/E/2293_hano) | [풀이](https://github.com/E/2293_jin) |
 | [[예시 잘못된 Tier](https://www.acmicpc.net/problem/9999)](https://www.acmicpc.net/problem/9999) | 9999 | silver I | 3 | [풀이](https://github.com/G/9999_bum) | [풀이](https://github.com/G/9999_hano) | [풀이](https://github.com/G/9999_jin) |
+| [[문제B](https://www.acmicpc.net/problem/11053)](https://www.acmicpc.net/problem/11053) | 11053 | Silver II | 5 | [풀이](https://github.com/2) | [풀이](https://github.com/2) | [풀이](https://github.com/2) |
+| [[문제D](https://www.acmicpc.net/problem/2293)](https://www.acmicpc.net/problem/2293) | 2293 | Gold V | 6 | [풀이](https://github.com/4) | [풀이](https://github.com/4) | [풀이](https://github.com/4) |
+| [[문제2](...)](https://www.acmicpc.net/problem/9992) | 9992 | Gold III | 7 | [풀이](...) | [풀이](...) | [풀이](...) |
 
 ## 📝 학습 노트
 ### 주요 패턴
