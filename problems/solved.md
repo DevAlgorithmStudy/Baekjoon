@@ -19,3 +19,4 @@
 | 2 | [새문제](https://www.acmicpc.net/problem/2048)   | 2048 | Bronze V  | greedy       | 멤버3 | https://… | https://… | https://… |
 | 2 | [새로운문제](https://www.acmicpc.net/problem/24018) | 24018 | Silver V  | dp       | 멤버2 | https://… | https://… | https://… |
 | 2    | [N-Queen](https://www.acmicpc.net/problem/9663)   | 9663 | Gold I    | 백트래킹    | 멤버3 | https://github.com/…/9663_bum | https://github.com/…/9663_hano | https://github.com/…/9663_jin |
+| 3    | [숨바꼭질](https://www.acmicpc.net/problem/1697) | 1697 | Silver I  | BFS           | 멤버3 | https://github.com/…/1697_bum | https://github.com/…/1697_hano | https://github.com/…/1697_jin |
