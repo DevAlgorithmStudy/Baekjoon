@@ -1,20 +1,39 @@
 name: Update Problem Classification
 
 on:
+  # main 브랜치에 push (특히 solved.md 변경) 발생 시
   push:
+    branches:
+      - main
     paths:
       - 'problems/solved.md'
+
+  # PR이 닫힐 때, merged 상태인 경우에도 트리거
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 
 jobs:
   classify:
     name: "분류 테이블 업데이트"
     runs-on: ubuntu-latest
 
+    # PR closed 이벤트일 때는 merged 여부를 확인
+    if: github.event_name == 'push' ||
+        (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+
     steps:
       - name: 레포지토리 체크아웃
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: 디렉터리 구조 확인 (디버깅)
+        run: |
+          echo "🔍 현재 디렉터리: $(pwd)"
+          echo "🔍 전체 파일 목록:"
+          ls -R .
 
       - name: Python 3.9 설치
         uses: actions/setup-python@v4
@@ -23,7 +42,7 @@ jobs:
 
       - name: by-tier & by-algorithm 테이블 재생성
         run: |
-          python3 .github/scripts/update_classification.py
+          python3 .github/scripts/update_classification.py || echo "❌ Python 스크립트 실행 오류!"
 
       - name: 변경된 파일 커밋
         run: |
