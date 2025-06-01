@@ -2,9 +2,9 @@
 
 ## 📊 통계 <!-- 자동 생성 영역, 손으로 수정 ❌ -->
 <!-- ACTIONS-STATS:START -->
-- **총 스터디 횟수**: 4회
-- **총 해결 문제 수**: 8개
-- **난이도별 분포**: Bronze 2, Silver 3, Gold 3, Platinum 0
+- **총 스터디 횟수**: 5회
+- **총 해결 문제 수**: 10개
+- **난이도별 분포**: Bronze 2, Silver 4, Gold 4, Platinum 0
 
 <!-- ACTIONS-STATS:END -->
 
