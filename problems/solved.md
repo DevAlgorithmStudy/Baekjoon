@@ -28,3 +28,6 @@
 | 5    | [문제C](https://www.acmicpc.net/problem/9663)      | 9663  | Gold I     | 백트래킹     | 멤버3 | [풀이](https://github.com/3)     | [풀이](https://github.com/3)     | [풀이](https://github.com/3)     |
 | 6    | [문제D](https://www.acmicpc.net/problem/2293)      | 2293  | Gold V     | DP         | 멤버4 | [풀이](https://github.com/4)     | [풀이](https://github.com/4)     | [풀이](https://github.com/4)     |
 | 6    | [문제E](https://www.acmicpc.net/problem/1697)      | 1697  | Silver I   | BFS       | 멤버5 | [풀이](https://github.com/5)     | [풀이](https://github.com/5)     | [풀이](https://github.com/5)     |
+| 7    | [문제1](...)  | 9991  | Silver III | Greedy     | 멤버A | [풀이](...) | [풀이](...) | [풀이](...) |
+| 7    | [문제2](...)  | 9992  | Gold III   | DP         | 멤버B | [풀이](...) | [풀이](...) | [풀이](...) |
+| 7    | [문제3](...)  | 9993  | Bronze IV  | 구현        | 멤버C | [풀이](...) | [풀이](...) | [풀이](...) |
