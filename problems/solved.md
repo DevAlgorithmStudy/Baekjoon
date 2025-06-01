@@ -23,3 +23,8 @@
 | 3    | [예시 잘못된 Algo](https://www.acmicpc.net/problem/8888) | 8888  | Silver III | dfs        | 멤버H | [풀이](https://github.com/H/8888_bum)     | [풀이](https://github.com/H/8888_hano)     | [풀이](https://github.com/H/8888_jin)     |
 | 3    | [예시 Platinum (미맵핑)](https://www.acmicpc.net/problem/20000) | 20000 | Platinum I | 이분 탐색   | 멤버I | [풀이](https://github.com/I/20000_bum)    | [풀이](https://github.com/I/20000_hano)    | [풀이](https://github.com/I/20000_jin)    |
 | 4    | [예시 Silver (Greedy)](https://www.acmicpc.net/problem/11399) | 11399 | Silver III | Greedy     | 멤버J | [풀이](https://github.com/J/11399_bum)    | [풀이](https://github.com/J/11399_hano)    | [풀이](https://github.com/J/11399_jin)    |
+| 5    | [문제A](https://www.acmicpc.net/problem/1000)      | 1000  | Bronze V   | 구현        | 멤버1 | [풀이](https://github.com/1)     | [풀이](https://github.com/1)     | [풀이](https://github.com/1)     |
+| 5    | [문제B](https://www.acmicpc.net/problem/11053)     | 11053 | Silver II  | DP         | 멤버2 | [풀이](https://github.com/2)    | [풀이](https://github.com/2)    | [풀이](https://github.com/2)    |
+| 5    | [문제C](https://www.acmicpc.net/problem/9663)      | 9663  | Gold I     | 백트래킹     | 멤버3 | [풀이](https://github.com/3)     | [풀이](https://github.com/3)     | [풀이](https://github.com/3)     |
+| 6    | [문제D](https://www.acmicpc.net/problem/2293)      | 2293  | Gold V     | DP         | 멤버4 | [풀이](https://github.com/4)     | [풀이](https://github.com/4)     | [풀이](https://github.com/4)     |
+| 6    | [문제E](https://www.acmicpc.net/problem/1697)      | 1697  | Silver I   | BFS       | 멤버5 | [풀이](https://github.com/5)     | [풀이](https://github.com/5)     | [풀이](https://github.com/5)     |
