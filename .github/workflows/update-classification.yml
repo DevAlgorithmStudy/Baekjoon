@@ -1,5 +1,9 @@
 name: Update Problem Classification
 
+# GitHub Actions가 GITHUB_TOKEN으로 레포에 쓰기 권한을 갖도록 명시
+permissions:
+  contents: write
+
 on:
   pull_request:
     types:
@@ -19,6 +23,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          # checkout 후에도 GITHUB_TOKEN을 통해 푸시할 수 있도록 유지
+          persist-credentials: true
 
       - name: 디렉터리 구조 확인 (디버깅)
         run: |
@@ -40,9 +46,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # 변경된 파일이 있을 때만 커밋 & 푸시
           if [[ -n "$(git status --porcelain)" ]]; then
             git add problems/by-tier/*.md problems/by-algorithm/*.md
             git commit -m "chore: by-tier/ by-algorithm 테이블 자동 업데이트"
+            # persist-credentials 덕분에 GITHUB_TOKEN으로 푸시 가능
             git push origin HEAD:main
           else
             echo "No changes detected; skipping commit."
