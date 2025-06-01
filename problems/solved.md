@@ -18,3 +18,4 @@
 | 1 | [문제명](https://www.acmicpc.net/problem/9012) | 9012 | Gold V | 구현 | 멤버3 | 풀이 링크 | 풀이 링크 | 풀이 링크 |
 | 2 | [새문제](https://www.acmicpc.net/problem/2048)   | 2048 | Bronze V  | greedy       | 멤버3 | https://… | https://… | https://… |
 | 2 | [새로운문제](https://www.acmicpc.net/problem/24018) | 24018 | Silver V  | dp       | 멤버2 | https://… | https://… | https://… |
+| 2    | [N-Queen](https://www.acmicpc.net/problem/9663)   | 9663 | Gold I    | 백트래킹    | 멤버3 | https://github.com/…/9663_bum | https://github.com/…/9663_hano | https://github.com/…/9663_jin |
