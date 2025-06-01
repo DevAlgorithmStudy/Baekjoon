@@ -4,8 +4,8 @@
 import re
 from pathlib import Path
 
-# 1) 경로 설정
-ROOT = Path(__file__).parent.parent
+# 1) 경로 설정 (레포지토리 루트로 이동)
+ROOT = Path(__file__).parent.parent.parent
 SOLVED_MD = ROOT / "problems" / "solved.md"
 BY_TIER_DIR = ROOT / "problems" / "by-tier"
 BY_ALGO_DIR = ROOT / "problems" / "by-algorithm"
@@ -28,7 +28,7 @@ ALGO_FILES = {
     "DFS": BY_ALGO_DIR / "bfs-dfs.md",
     "백트래킹": BY_ALGO_DIR / "backtracking.md",
     "Backtracking": BY_ALGO_DIR / "backtracking.md",
-    "구현": BY_ALGO_DIR / "implementation.md",  
+    "구현": BY_ALGO_DIR / "implementation.md",
     # 필요에 따라 추가하고 싶을 때 여기에 키: 값 형태로 더 추가
 }
 
@@ -39,6 +39,10 @@ def parse_solved_entries():
     리스트 of dict 형태로 반환.
     각 dict의 키: week, name, number, tier, algo, solver, bum, hano, jin
     """
+    if not SOLVED_MD.exists():
+        print(f"Error: {SOLVED_MD} 파일을 찾을 수 없습니다.")
+        return []
+
     text = SOLVED_MD.read_text(encoding="utf-8").splitlines()
     in_table = False
     headers = []
@@ -93,7 +97,7 @@ def update_tier_file(tier_name, entries):
     # 해당 티어에 속한 문제 필터
     tier_key = tier_name  # 'Bronze', 'Silver', 'Gold'
     filtered = [
-        e for e in entries 
+        e for e in entries
         if e["tier"].split()[0] == tier_key
     ]
 
@@ -102,7 +106,7 @@ def update_tier_file(tier_name, entries):
 
     # '## 📚 해결한 문제들' 시작 인덱스 찾기
     start_idx = next(
-        (i for i, l in enumerate(lines) if l.strip().startswith("## 📚 해결한 문제들")), 
+        (i for i, l in enumerate(lines) if l.strip().startswith("## 📚 해결한 문제들")),
         None
     )
     if start_idx is None:
@@ -111,7 +115,6 @@ def update_tier_file(tier_name, entries):
 
     # 테이블을 덮어쓸 새로운 라인 생성
     new_table = []
-    # 테이블 헤더
     new_table.append("| 문제명 | 번호 | 주차 | bum | hano | jin | 알고리즘 |")
     new_table.append("|--------|------|------|-----|------|-----|------|")
     for e in filtered:
@@ -130,9 +133,8 @@ def update_tier_file(tier_name, entries):
             break
         end_idx += 1
 
-    # 최종적으로, lines_before + 새로운 테이블 + lines_after
-    lines_before = lines[: start_idx + 1]  # '## 📚 해결한 문제들' 포함
-    lines_after = lines[end_idx:]  # 테이블 이후 내용(없어도 됨)
+    lines_before = lines[: start_idx + 1]
+    lines_after = lines[end_idx:]
 
     updated = lines_before + [""] + new_table + [""] + lines_after
     target_path.write_text("\n".join(updated), encoding="utf-8")
@@ -143,7 +145,7 @@ def update_tier_file(tier_name, entries):
 def update_algo_file(algo_key, entries):
     """
     algo_key 예: 'DP', '백트래킹', '그래프' 등
-    해당 알고리즘에 속하는 entries만 골라서,
+    해당 알고리즘에 속한 entries만 골라서,
     problems/by-algorithm/{파일}.md 내 '## 📚 해결한 문제들' 섹션 테이블을 덮어쓴다.
     """
     if algo_key not in ALGO_FILES:
@@ -159,14 +161,13 @@ def update_algo_file(algo_key, entries):
 
     lines = target_path.read_text(encoding="utf-8").splitlines()
     start_idx = next(
-        (i for i, l in enumerate(lines) if l.strip().startswith("## 📚 해결한 문제들")), 
+        (i for i, l in enumerate(lines) if l.strip().startswith("## 📚 해결한 문제들")),
         None
     )
     if start_idx is None:
         print(f"⚠️ {algo_key} 파일에 '## 📚 해결한 문제들' 섹션이 없어 건너뜁니다.")
         return
 
-    # 새로운 테이블 생성
     new_table = []
     new_table.append("| 문제명 | 번호 | 난이도 | 주차 | bum | hano | jin |")
     new_table.append("|--------|------|--------|------|-----|------|-----|")
@@ -180,7 +181,6 @@ def update_algo_file(algo_key, entries):
         row = f"| {link} | {e['number']} | {tier_cell} | {week_cell} | {bum_cell} | {hano_cell} | {jin_cell} |"
         new_table.append(row)
 
-    # 기존 테이블 영역 제거 및 삽입
     end_idx = start_idx + 1
     for i in range(start_idx + 1, len(lines)):
         if lines[i].strip().startswith("## "):
@@ -196,10 +196,6 @@ def update_algo_file(algo_key, entries):
 
 
 def main():
-    if not SOLVED_MD.exists():
-        print(f"Error: {SOLVED_MD} 파일을 찾을 수 없습니다.")
-        return
-
     entries = parse_solved_entries()
     if not entries:
         print("Warning: 해결한 문제 목록을 파싱하지 못했습니다.")
@@ -214,7 +210,7 @@ def main():
         update_algo_file(algo_key, entries)
 
     print("✅ 모든 분류 파일 업데이트 완료.")
-    
+
 
 if __name__ == "__main__":
     main()
