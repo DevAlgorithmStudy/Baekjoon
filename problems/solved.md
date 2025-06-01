@@ -17,7 +17,4 @@
 | 1 | [문제명](https://www.acmicpc.net/problem/5678) | 5678 | Silver II | 그래프 | 멤버2 | 풀이 링크 | 풀이 링크 | 풀이 링크 |
 | 1 | [문제명](https://www.acmicpc.net/problem/9012) | 9012 | Gold V | 구현 | 멤버3 | 풀이 링크 | 풀이 링크 | 풀이 링크 |
 | 2 | [새문제](https://www.acmicpc.net/problem/2048)   | 2048 | Bronze V  | greedy       | 멤버3 | https://… | https://… | https://… |
-
-<!-- ACTIONS-PROBLEMS:START -->
-<!-- 아래 영역은 자동으로 관리됩니다. 수동 편집 금지 -->
-<!-- ACTIONS-PROBLEMS:END -->
+| 2 | [새로운문제](https://www.acmicpc.net/problem/24018) | 24018 | Silver V  | dp       | 멤버2 | https://… | https://… | https://… |
