@@ -74,7 +74,7 @@ Baekjoon/
 ## 📝 solved.md 작성 가이드
 
 `problems/solved.md` 파일은 스터디 전체 문제 목록을 정리하는 메인 테이블입니다.  
-이 테이블은 GitHub Actions에 의해 자동 분류되어 `by-tier/`, `by-algorithm/` 디렉토리에 반영되므로, 반드시 **작성 규칙](./docs/solved-guideline.md)**을 준수해야 합니다.
+이 테이블은 GitHub Actions에 의해 자동 분류되어 `by-tier/`, `by-algorithm/` 디렉토리에 반영되므로, 반드시 **작성 규칙**을 준수해야 합니다.
 
 - 각 문제는 문제명, 번호, 난이도(Tier), 알고리즘 유형, 선정자, 개인별 풀이 링크를 포함해야 하며
 - Tier는 `Gold I`, `Silver II` 등과 같이 정확한 대소문자와 공백으로 표기되어야 하고
